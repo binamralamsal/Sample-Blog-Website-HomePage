@@ -130,7 +130,7 @@ main aside ul li:hover .aside-icon-content,
 
 main .content {
   margin-left: 280px;
-
+  padding: 20px;
   background-color: #1f1d2b;
 }
 
@@ -190,6 +190,62 @@ main .content {
 
 .fa-sun {
   color: white;
+}
+
+.page-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.top-posts {
+  display: grid;
+  grid-template: repeat(1, 3fr) / repeat(3, 100fr);
+  gap: 20px;
+}
+
+.top-post {
+  background: red;
+  height: 50vh;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.top-post-1 {
+  grid-column: span 2;
+}
+
+.top-posts .top-post .top-post-title {
+  font-size: 30px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* Change the line bellow to see the magic! */
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  font-weight: bold;
+  color: white;
+  width: 12ch;
+}
+
+.top-post-details {
+  margin-top: 10px;
+}
+
+.top-post-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  float: left;
+  margin-right: 10px;
+  background: yellow;
+}
+
+.top-post-details p {
+  color: white;
+}
+
+.top-post-author {
+  font-weight: 600;
 }
 
 /* width */
