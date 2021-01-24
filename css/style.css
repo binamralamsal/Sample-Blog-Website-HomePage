@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background: #1f1d2b;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  color: white;
+  z-index: 2;
+  display: flex;
+  padding: 10px 30px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-center input {
+  padding: 10px 20px;
+  background: #353340;
+  outline: none;
+  border: none;
+  color: white;
+  border: 1px solid transparent;
+  width: 40vw;
+  border-radius: 10px;
+}
+
+.nav-center input:hover,
+.nav-center input:focus {
+  background-color: #2f2e38;
+  transition: 0.2s ease-in-out;
+  border: 1px solid #7f74e9;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  background: yellow;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+}
+
+.nav-person-info,
+.avatar {
+  margin-right: 5px;
+}
+
+.nav-drop {
+  color: #808e96;
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.notification {
+  color: #808e96;
+  cursor: pointer;
+  padding: 10px;
+}
+
+main aside {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 250px; /* Set the width of the sidebar */
+  display: inline-block;
+  vertical-align: top;
+  z-index: 1; /* Stay on top */
+  background: #1f1d2b;
+  padding-left: 30px;
+  vertical-align: top;
+  overflow: auto;
+}
+
+main .content {
+  display: inline-block;
+  height: 100%;
+  overflow: auto;
+  vertical-align: top;
+}
+main aside p {
+  color: #808e96;
+  font-size: 14px;
+}
+
+main aside .title {
+  padding: 15px 0;
+}
+
+main aside ul {
+  list-style-type: none;
+}
+
+main aside ul li a {
+  display: flex;
+  align-items: center;
+  color: #808e96;
+  text-decoration: none;
+  padding: 15px 0;
+}
+
+main aside ul li a .aside-icon {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+main aside ul li a p {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+main aside ul li:hover .aside-icon,
+.active .aside-icon {
+  background: #eb7247;
+  color: white;
+  transition: 0.2s ease;
+}
+
+main aside ul li:hover .aside-icon-content,
+.active .aside-icon-content {
+  color: white;
+  transition: 0.2s ease;
+}
+
+main .content {
+  margin-left: 250px;
+}
+
+.aside-separator {
+  background: #353340;
+  height: 1px;
+  margin: 30px 50px 30px 0;
+}
