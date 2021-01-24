@@ -153,7 +153,7 @@ main .content {
 }
 
 .label {
-  background-color: #111;
+  background-color: #6a60ce;
   border-radius: 50px;
   cursor: pointer;
   display: flex;
@@ -183,11 +183,11 @@ main .content {
 }
 
 .fa-moon {
-  color: #f1c40f;
+  color: white;
 }
 
 .fa-sun {
-  color: #f39c12;
+  color: white;
 }
 
 /* width */
