@@ -130,6 +130,8 @@ main aside ul li:hover .aside-icon-content,
 
 main .content {
   margin-left: 280px;
+
+  background-color: #1f1d2b;
 }
 
 .aside-separator {
