@@ -73,21 +73,13 @@ nav {
 main aside {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 250px; /* Set the width of the sidebar */
-  display: inline-block;
-  vertical-align: top;
   z-index: 1; /* Stay on top */
   background: #1f1d2b;
   padding-left: 30px;
-  vertical-align: top;
-  overflow: auto;
+  position: fixed;
+  overflow-y: auto;
 }
 
-main .content {
-  display: inline-block;
-  height: 100%;
-  overflow: auto;
-  vertical-align: top;
-}
 main aside p {
   color: #808e96;
   font-size: 14px;
@@ -140,4 +132,24 @@ main .content {
   background: #353340;
   height: 1px;
   margin: 30px 50px 30px 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f1d2b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808e96;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b89e95;
 }
