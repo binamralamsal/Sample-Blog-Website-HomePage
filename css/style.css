@@ -23,7 +23,7 @@ nav {
 
 .nav-center input {
   padding: 10px 20px;
-  background: #353340;
+  background: #252837;
   outline: none;
   border: none;
   color: white;
@@ -135,7 +135,7 @@ main .content {
 }
 
 .aside-separator {
-  background: #353340;
+  background: #252837;
   height: 1px;
   margin: 30px 50px 30px 0;
 }
@@ -196,6 +196,7 @@ main .content {
   color: white;
   font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .top-posts {
@@ -246,6 +247,74 @@ main .content {
 
 .top-post-author {
   font-weight: 600;
+}
+
+.post-section-title {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+.post-section {
+  display: grid;
+  grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+  gap: 20px;
+}
+
+.post-block {
+  border-radius: 20px;
+  height: 250px;
+  background: red;
+  position: relative;
+  overflow: hidden;
+}
+
+.time-pill {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  width: 7ch;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.pill-post-block {
+  float: right;
+  margin: 10px;
+}
+
+.post-block-details {
+  background: #252837;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+}
+
+.post-block-details .author,
+.post-block-details .extra-info {
+  font-size: 12px;
+  margin: 3px 0;
+  color: #808e96;
+}
+
+.post-block-details .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.post-block-avatar {
+  height: 50px;
+  background: yellow;
+  border-radius: 100%;
+  margin-top: -40px;
+  float: right;
+  width: 50px;
 }
 
 /* width */
