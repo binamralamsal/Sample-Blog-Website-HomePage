@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
+:root {
+  --primary-color: #1f1d2b;
+  --secondary-color: #252837;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +12,16 @@
   font-family: "Poppins", sans-serif;
 }
 
-nav {
-  background: #1f1d2b;
+body {
+  background-color: var(--primary-color);
+}
+
+.show-in-mobile {
+  display: none;
+}
+
+.desktop-nav {
+  background: var(--primary-color);
   position: sticky;
   width: 100%;
   top: 0;
@@ -23,11 +36,10 @@ nav {
 
 .nav-center input {
   padding: 10px 20px;
-  background: #252837;
+  background: var(--secondary-color);
   outline: none;
-  border: none;
   color: white;
-  border: 1px solid transparent;
+  border: 1px solid #999;
   width: 40vw;
   border-radius: 10px;
 }
@@ -74,7 +86,7 @@ main aside {
   height: 100%;
   width: 280px;
   z-index: 1;
-  background: #1f1d2b;
+  background: var(--primary-color);
   padding-left: 30px;
   position: fixed;
   overflow-y: auto;
@@ -128,14 +140,18 @@ main aside ul li:hover .aside-icon-content,
   transition: 0.2s ease;
 }
 
-main .content {
+.container {
   margin-left: 280px;
   padding: 20px;
-  background-color: #1f1d2b;
+}
+
+main .content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .aside-separator {
-  background: #252837;
+  background: var(--secondary-color);
   height: 1px;
   margin: 30px 50px 30px 0;
 }
@@ -144,10 +160,11 @@ main .content {
 .checkbox-container {
   display: flex;
   margin-left: 10px;
+  align-items: center;
 }
 
 .checkbox-container p {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 .checkbox {
   opacity: 0;
@@ -163,8 +180,8 @@ main .content {
   justify-content: space-between;
   padding: 5px;
   position: relative;
-  height: 26px;
-  width: 50px;
+  height: 16px;
+  width: 30px;
   transform: scale(1.5);
 }
 
@@ -174,22 +191,24 @@ main .content {
   position: absolute;
   top: 2px;
   left: 2px;
-  height: 22px;
-  width: 22px;
+  height: 12px;
+  width: 12px;
   transform: translateX(0px);
   transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-  transform: translateX(24px);
+  transform: translateX(14px);
 }
 
 .fa-moon {
   color: white;
+  font-size: 8px;
 }
 
 .fa-sun {
   color: white;
+  font-size: 8px;
 }
 
 .page-title {
@@ -201,35 +220,33 @@ main .content {
 
 .top-posts {
   display: grid;
-  grid-template: repeat(1, 3fr) / repeat(3, 100fr);
+  grid-template: repeat(1, 1fr) / repeat(2, 1fr);
   gap: 20px;
 }
 
 .top-post {
   background: red;
-  height: 50vh;
+  height: 300px;
   border-radius: 20px;
-  padding: 40px;
-}
-
-.top-post-1 {
-  grid-column: span 2;
+  padding: 30px;
+  position: relative;
 }
 
 .top-posts .top-post .top-post-title {
-  font-size: 30px;
+  font-size: 28px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  /* Change the line bellow to see the magic! */
   -webkit-line-clamp: 4;
   overflow: hidden;
   font-weight: bold;
   color: white;
-  width: 12ch;
+  width: 15ch;
 }
 
 .top-post-details {
-  margin-top: 10px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .top-post-avatar {
@@ -247,6 +264,7 @@ main .content {
 
 .top-post-author {
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .post-section-title {
@@ -268,6 +286,7 @@ main .content {
   background: red;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .time-pill {
@@ -285,12 +304,20 @@ main .content {
   margin: 10px;
 }
 
+.pill-top-post-block {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 15px;
+}
+
 .post-block-details {
-  background: #252837;
+  background: var(--secondary-color);
   color: white;
   position: absolute;
   bottom: 0;
   padding: 15px;
+  width: 100%;
 }
 
 .post-block-details .author,
@@ -324,7 +351,7 @@ main .content {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1f1d2b;
+  background: var(--secondary-color);
 }
 
 /* Handle */
@@ -335,4 +362,130 @@ main .content {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b89e95;
+}
+
+.mobile-nav {
+  display: flex;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  background: var(--secondary-color);
+  width: 100%;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 14px;
+  align-items: center;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-nav-item p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* For  dark mode */
+
+.light {
+  background-color: white !important;
+}
+
+.text-light {
+  color: black !important;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 901px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+  }
+
+  .hide-in-1200 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 769px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+  }
+
+  .hide-in-900 {
+    display: none;
+  }
+
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-posts {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
+
+  .top-post-1 {
+    grid-column: span 1;
+  }
+
+  .container {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+  }
+
+  .hide-in-900 {
+    display: none;
+  }
+
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .top-posts {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
+
+  .container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  main aside {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .show-in-mobile {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
 }
