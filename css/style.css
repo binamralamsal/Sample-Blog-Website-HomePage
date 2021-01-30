@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 :root {
-  --primary-color: #1f1d2b;
-  --secondary-color: #252837;
+  --dark-primary-color: #1f1d2b;
+  --dark-secondary-color: #252837;
+  --light-primary-color: #fff;
+  --light-secondary-color: #fff;
+
+  --primary-color: var(--dark-primary-color);
+  --secondary-color: var(--dark-secondary-color);
 }
 
 * {
@@ -14,6 +19,7 @@
 
 body {
   background-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .show-in-mobile {
@@ -154,61 +160,6 @@ main .content {
   background: var(--secondary-color);
   height: 1px;
   margin: 30px 50px 30px 0;
-}
-
-/* Credit: Florin Pop https://codepen.io/FlorinPop17/pen/XWWZYYG */
-.checkbox-container {
-  display: flex;
-  margin-left: 10px;
-  align-items: center;
-}
-
-.checkbox-container p {
-  margin-left: 15px;
-}
-.checkbox {
-  opacity: 0;
-  position: absolute;
-}
-
-.label {
-  background-color: #6a60ce;
-  border-radius: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  position: relative;
-  height: 16px;
-  width: 30px;
-  transform: scale(1.5);
-}
-
-.label .ball {
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: 12px;
-  width: 12px;
-  transform: translateX(0px);
-  transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .label .ball {
-  transform: translateX(14px);
-}
-
-.fa-moon {
-  color: white;
-  font-size: 8px;
-}
-
-.fa-sun {
-  color: white;
-  font-size: 8px;
 }
 
 .page-title {
@@ -389,14 +340,24 @@ main .content {
   font-size: 12px;
 }
 
-/* For  dark mode */
-
-.light {
-  background-color: white !important;
+/* For Light Mode */
+body.theme-light {
+  --primary-color: var(--light-primary-color);
+  --secondary-color: var(--light-secondary-color);
 }
 
-.text-light {
-  color: black !important;
+@media (prefers-color-scheme: dark) {
+  body.theme-auto {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body.theme-auto {
+    --primary-color: var(--light-primary-color);
+    --secondary-color: var(--light-secondary-color);
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 901px) {
