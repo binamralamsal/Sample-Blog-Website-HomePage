@@ -3,11 +3,18 @@
 :root {
   --dark-primary-color: #1f1d2b;
   --dark-secondary-color: #252837;
+  --dark-text-color: rgb(241, 241, 241);
+  --dark-text-color-shady: #ababab;
+
   --light-primary-color: #fff;
-  --light-secondary-color: #fff;
+  --light-secondary-color: rgb(223, 223, 223);
+  --light-text-color: rgb(49, 49, 49);
+  --light-text-color-shady: #353340;
 
   --primary-color: var(--dark-primary-color);
   --secondary-color: var(--dark-secondary-color);
+  --text-color: var(--dark-text-color);
+  --text-color-shady: var(--dark-text-color-shady);
 }
 
 * {
@@ -31,7 +38,7 @@ body {
   position: sticky;
   width: 100%;
   top: 0;
-  color: white;
+  color: var(--text-color);
   z-index: 2;
   display: flex;
   padding: 10px 30px;
@@ -42,17 +49,17 @@ body {
 
 .nav-center input {
   padding: 10px 20px;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   outline: none;
-  color: white;
-  border: 1px solid #999;
+  color: var(--text-color);
+  border: 1px solid #aaa;
   width: 40vw;
   border-radius: 10px;
 }
 
 .nav-center input:hover,
 .nav-center input:focus {
-  background-color: #2f2e38;
+  background-color: var(--secondary-color);
   transition: 0.2s ease-in-out;
   border: 1px solid #7f74e9;
 }
@@ -75,7 +82,7 @@ body {
 }
 
 .nav-drop {
-  color: #808e96;
+  color: var(--text-color);
   font-size: 13px;
   cursor: pointer;
   margin-right: 30px;
@@ -83,7 +90,7 @@ body {
 }
 
 .notification {
-  color: #808e96;
+  color: var(--text-color);
   cursor: pointer;
   padding: 10px;
 }
@@ -103,7 +110,7 @@ main aside {
 }
 
 main aside p {
-  color: #808e96;
+  color: var(--text-color-shady);
   font-size: 14px;
 }
 
@@ -118,7 +125,7 @@ main aside ul {
 main aside ul li a {
   display: flex;
   align-items: center;
-  color: #808e96;
+  color: var(--text-color);
   text-decoration: none;
   padding: 15px 0;
 }
@@ -126,6 +133,7 @@ main aside ul li a {
 main aside ul li a .aside-icon {
   padding: 10px;
   border-radius: 10px;
+  background: var(--secondary-color);
 }
 
 main aside ul li a p {
@@ -136,13 +144,13 @@ main aside ul li a p {
 main aside ul li:hover .aside-icon,
 .active .aside-icon {
   background: #eb7247;
-  color: white;
+  color: var(--light-primary-color);
   transition: 0.2s ease;
 }
 
 main aside ul li:hover .aside-icon-content,
 .active .aside-icon-content {
-  color: white;
+  color: var(--text-color);
   transition: 0.2s ease;
 }
 
@@ -163,7 +171,7 @@ main .content {
 }
 
 .page-title {
-  color: white;
+  color: var(--text-color);
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
@@ -190,7 +198,7 @@ main .content {
   -webkit-line-clamp: 4;
   overflow: hidden;
   font-weight: bold;
-  color: white;
+  color: var(--light-primary-color);
   width: 15ch;
 }
 
@@ -210,7 +218,7 @@ main .content {
 }
 
 .top-post-details p {
-  color: white;
+  color: var(--light-primary-color);
 }
 
 .top-post-author {
@@ -219,7 +227,7 @@ main .content {
 }
 
 .post-section-title {
-  color: white;
+  color: var(--text-color);
   font-size: 25px;
   font-weight: 600;
   margin: 40px 0 20px;
@@ -241,7 +249,7 @@ main .content {
 }
 
 .time-pill {
-  color: white;
+  color: var(--light-primary-color);
   background: rgba(0, 0, 0, 0.4);
   width: 7ch;
   text-align: center;
@@ -264,7 +272,7 @@ main .content {
 
 .post-block-details {
   background: var(--secondary-color);
-  color: white;
+  color: var(--text-color);
   position: absolute;
   bottom: 0;
   padding: 15px;
@@ -275,7 +283,7 @@ main .content {
 .post-block-details .extra-info {
   font-size: 12px;
   margin: 3px 0;
-  color: #808e96;
+  color: var(--text-color-shady);
 }
 
 .post-block-details .title {
@@ -307,7 +315,7 @@ main .content {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #808e96;
+  background: var(--text-color);
 }
 
 /* Handle on hover */
@@ -317,7 +325,7 @@ main .content {
 
 .mobile-nav {
   display: flex;
-  color: white;
+  color: var(--text-color);
   position: fixed;
   bottom: 0;
   z-index: 2;
@@ -340,16 +348,30 @@ main .content {
   font-size: 12px;
 }
 
+#theme__select {
+  outline: none;
+  background: var(--primary-color);
+  color: var(--text-color-shady);
+  border: 1px solid var(--secondary-color);
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 /* For Light Mode */
 body.theme-light {
   --primary-color: var(--light-primary-color);
   --secondary-color: var(--light-secondary-color);
+  --text-color: var(--light-text-color);
+  --text-color-shady: var(--light-text-color-shady);
 }
 
 @media (prefers-color-scheme: dark) {
   body.theme-auto {
     --primary-color: var(--dark-primary-color);
     --secondary-color: var(--dark-secondary-color);
+    --text-color: var(--dark-text-color);
+    --text-color-shady: var(--dark-text-color-shady);
   }
 }
 
@@ -357,6 +379,8 @@ body.theme-light {
   body.theme-auto {
     --primary-color: var(--light-primary-color);
     --secondary-color: var(--light-secondary-color);
+    --text-color: var(--light-text-color);
+    --text-color-shady: var(--light-text-color-shady);
   }
 }
 
