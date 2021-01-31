@@ -24,7 +24,17 @@
       <div class="nav-right">
         <div class="avatar"></div>
         <p class="nav-person-info">Thomas St</p>
-        <i class="fas fa-chevron-down nav-drop"></i>
+        <div class="dropdown">
+          <i
+            class="fas fa-chevron-down nav-drop dropbtn"
+            onclick="openDropdown('user-info-drop')"
+          ></i>
+          <div id="user-info-drop" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
         <i class="fas fa-bell notification"></i>
       </div>
     </nav>
