@@ -53,15 +53,36 @@ body {
   outline: none;
   color: var(--text-color);
   border: 1px solid #aaa;
-  width: 40vw;
-  border-radius: 10px;
+  width: 35vw;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+  height: 40px;
+  float: left;
 }
 
 .nav-center input:hover,
-.nav-center input:focus {
+.nav-center input:focus,
+.search-icon:hover,
+.search-icon:focus {
   background-color: var(--secondary-color);
   transition: 0.2s ease-in-out;
   border: 1px solid #7f74e9;
+}
+
+.search-icon {
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: var(--text-color-shady);
+  border: 1px solid #aaa;
+  width: 5vw;
+  padding: 10px 20px;
+  border-radius: 0px 10px 10px 0;
+  float: left;
+  height: 40px;
+  cursor: pointer;
 }
 
 .nav-right {
