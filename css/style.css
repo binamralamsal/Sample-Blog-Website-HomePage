@@ -47,17 +47,21 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.nav-center input {
+.nav-center input,
+.nav-center button {
   padding: 10px 20px;
-  background: var(--primary-color);
   outline: none;
-  color: var(--text-color);
+  background: var(--primary-color);
+  color: var(--text-color-shady);
+  height: 40px;
+  float: left;
   border: 1px solid #aaa;
+}
+
+.nav-center input {
   width: 35vw;
   border-radius: 10px 0 0 10px;
   border-right: none;
-  height: 40px;
-  float: left;
 }
 
 .nav-center input:hover,
@@ -70,18 +74,11 @@ body {
 }
 
 .search-icon {
-  outline: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary-color);
-  color: var(--text-color-shady);
-  border: 1px solid #aaa;
   width: 5vw;
-  padding: 10px 20px;
   border-radius: 0px 10px 10px 0;
-  float: left;
-  height: 40px;
   cursor: pointer;
 }
 
